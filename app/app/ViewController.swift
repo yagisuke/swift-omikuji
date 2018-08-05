@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     @IBAction func getOmikuji(_ sender: Any) {
         // 0 - n
         // arc4random_uniform(n + 1)
-        let random = arc4random_uniform(10)
-        self.result.text = String(random)
+        let results = ["大吉", "吉", "中吉", "凶", "大凶"]
+        let index = Int(arc4random_uniform(UInt32(results.count)))
+        self.result.text = results[index]
     }
     
     override func viewDidLoad() {
